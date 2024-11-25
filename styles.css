@@ -1,0 +1,194 @@
+/* Общие стили */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('background.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+}
+
+/* Заголовок */
+.title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: red;
+    animation: title-flash 1s infinite;
+    margin: 20px 0;
+}
+
+/* Анимация мигания заголовка */
+@keyframes title-flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Поле ввода и кнопка подтверждения */
+.input-section {
+    margin: 20px;
+}
+
+#user-input {
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+}
+
+#confirm-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+}
+
+#confirm-button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+/* Контейнер для картинок */
+.container {
+    position: relative;
+    margin: 130px auto;
+    max-width: 90%;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 20px auto;
+}
+
+/* Устанавливаем картинки на одной линии */
+.image {
+    position: relative;
+    transition: transform 0.5s ease; /* Плавное перемещение */
+}
+
+.image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+
+/* Кнопки */
+#signal-button, #reset-button {
+    margin-top: 130px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #f50202;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    animation: fireEffect 1.5s infinite ease-in-out;
+    transition: background-color 0.3s ease;
+}
+
+#signal-button:disabled {
+    background-color: gray;
+    cursor: not-allowed;
+}
+
+
+/* Эффект огня для кнопок */
+#signal-button, #reset-button, #confirm-button {
+    position: relative;
+    display: inline-block;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: red;
+    overflow: hidden;
+    transition: background-color 0.3s;
+}
+
+#signal-button:hover, #reset-button:hover, #confirm-button:hover {
+    background-color: darkred;
+}
+
+
+@keyframes flames {
+    0% { height: 0; opacity: 0.3; }
+    50% { height: 100%; opacity: 0.7; }
+    100% { height: 0; opacity: 0.3; }
+}
+
+/* Сброс состояния для картинок */
+.image {
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+/* Затемнение экрана */
+.dark-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+/* Анимация перемешивания */
+.image {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+/* Затемнение экрана */
+.dark-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+
+/* Огненная анимация для кнопки */
+@keyframes fire-pulse {
+    0%, 100% {
+        box-shadow: 0 0 15px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 69, 0, 0.6), 0 0 45px rgba(255, 140, 0, 0.4);
+        transform: scale(1);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(255, 0, 0, 1), 0 0 50px rgba(255, 69, 0, 0.8), 0 0 60px rgba(255, 140, 0, 0.6);
+        transform: scale(1.1);
+    }
+}
+
+/* Эффект огня для выбранной картинки */
+.fire-effect {
+    animation: fire-pulse 1.5s infinite ease-in-out;
+    border-radius: 50%; /* Круглая форма эффекта */
+    position: relative;
+    z-index: 2; /* Поднимает эффект над остальными элементами */
+}
+
+.image.selected {
+    transform: translateY(-50px); /* Поднимаем картинку */
+}
+
+.image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.5s ease; /* Плавное движение */
+}
