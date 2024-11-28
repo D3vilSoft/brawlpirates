@@ -32,7 +32,7 @@ function shuffleArray(array) {
 // Функция перемешивания картинок
 function shuffleImages() {
     if (!isConfirmed) {
-        alert('Введите текст в поле и подтвердите его!');
+        alert('Введите ваш ID!');
         return;
     }
 
